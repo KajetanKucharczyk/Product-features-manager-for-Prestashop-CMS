@@ -1,0 +1,1 @@
+var kategoria_glowna = 2;

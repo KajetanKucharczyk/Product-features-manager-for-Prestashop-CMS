@@ -1,0 +1,698 @@
+﻿<html>
+<head>
+<title>Cechy agtom</title>
+<meta charset="utf8_general_ci">
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<script type="text/javascript" src="kategoria_glowna.js"></script>
+
+<style>
+.input{
+	width:200px;
+	font-weight:bold;
+}
+td{
+	height:20px;
+	vertical-align:top;
+}
+.switch {
+    width: 100%;
+    height: auto;
+    position: relative;	
+	margin-bottom:3px;
+}
+.switch label:hover{
+	background-color: #a0a0a0;
+}
+.switch label {
+    display: block;
+    width: 100%;
+    height: 85%;
+    position: relative;
+    background: white;
+	border: 1px solid #a0a0a0;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /
+}
+body{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	font-family:"Calibri Light";
+	overflow:hidden;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /
+	
+}
+.przycisk{
+	height:20px;
+	font-size:14px;
+	line-height:20px;
+	text-align:center;
+	margin: 2px;
+	border: 2px solid grey;	
+	cursor:pointer;
+	position:relative;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /
+}
+.przycisk > div{
+	height:100%;
+	position:absolute;
+	text-align:right;
+	bottom: -5;
+    font-size: 9;
+    right: 2;
+}
+.przycisk1{
+	margin-left:20px;
+	border: 2px solid #4CAF10;
+	border-color:#4CAF10;
+}
+.przycisk2{
+	margin-left:40px;
+	border: 2px solid #497dd1;
+	border-color:#497dd1;
+}
+.przycisk3{
+	margin-left:60px;
+	border: 2px solid #a33401;
+	border-color:#a33401;
+}
+.przycisk4{
+	margin-left:60px;
+	border: 2px solid #00a88f;
+	border-color:#00a88f;
+}
+.przycisk5{
+	margin-left:60px;
+	border: 2px solid #7000a8;
+	border-color:#7000a8;
+}
+.pole{
+	height:auto;
+	padding-left:30px;
+}
+#poleProduktow{
+	overflow:auto;
+	padding-top:15px;
+	height:calc(100% - 100px);
+	width:calc(100% - 300px);
+	overflow-x:auto;
+	overflow-y:auto;
+	position:relative;
+}
+#poleProduktow > div{
+	width:auto;
+	height:100%;
+}
+.input{
+	width:200px;
+	font-weight:bold;
+}
+
+table{
+	margin:5px;
+	border-collapse:collapse;
+	border:0px;
+}
+#zamknij{
+	width: 500px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 25px;
+	margin-bottom:25px;
+    border: 2px solid grey;
+    text-align: center;
+       margin-left: calc((100% - 725px) / 2);
+    float: left;
+    cursor: pointer;
+	font-weight:default;
+	border-color:grey;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /
+}
+#zamknij:hover {
+    background-color:grey;
+}
+.przyciskEDIT{
+	width:40px;
+	height:20px;
+	margin-right:2px;
+	border: 2px solid grey;
+	float:left;
+	font-size:12px;
+	line-height:20px;
+	text-align:center;
+	cursor:pointer;
+}
+.opcje2{
+	border: 2px solid green;
+}
+.nazwy_opcji{
+	background-color:black;
+	border: 3px solid gray;
+	color:white;
+	font-size:20px;
+}
+.pro{
+	position:absolute;
+	top:20px;
+	left:calc((100% - 450px) / 2 + 110px);
+	width:450px;
+	z-index:1;
+	background-color:white;
+	border:2px solid grey;
+	text-align:center;
+	padding:20px;
+}
+#usun{
+	width: 200px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 25px;
+	margin-bottom:15px;
+    border: 2px solid grey;
+    text-align: center;
+    cursor: not-allowed;
+	font-weight:default;
+	border-color:grey;
+	position:absolute;
+	bottom:0px;
+	left:calc((5% + 217px - 200px) / 2 + 20px);
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /
+}
+#przeslona{
+	background-color:rgba(0, 0, 0, 1);
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:99999;
+	font-size:50px;
+	padding-top:300px;
+	text-align:center;
+	color:white;
+	cursor: none;
+}
+</style>
+ <script>
+
+//INFO DOTYCZACE PRODUKTU
+var _nazwa_kategorii = '';
+var _id_produktu = '';
+var _id_produktu = '';
+var _nazwa_produktu = '';
+
+var katalog = 0;
+
+var id_niezmienne;
+var ostatni;
+
+$(document).ready(function(){
+	listuj(kategoria_glowna, 1)
+	//USUWANIE CECH
+	$('#usun').click(function(){
+		usun();
+	})
+})
+//ANIMACJE
+function animuj(opcja){
+	//ZAMKNIJ
+	if(opcja == 1){
+		$("#zamknij")
+		.mouseover(function(){
+			$(this).css('background-color', $(this).css('border-color'));
+		})
+		.mouseout(function(){
+			$(this).css('background-color', 'white');
+		})
+	}
+	//PRZYCISKI
+	if(opcja == 2){
+		$('.przycisk')
+		.mouseover(function(){
+			if($(this).css('background-color') != 'rgb(255, 94, 94)')
+				$(this).css('background-color', $(this).css('border-color'));
+		})
+		.mouseout(function(){
+			if($(this).css('background-color') != 'rgb(255, 94, 94)')
+				$(this).css('background-color', 'white');
+		})
+	}
+}
+//LISTUJ KATEGORIE
+function listuj(poziom, fragment){
+	$.ajax({
+		type: "POST",
+		url: "pobranie.php",
+		data: { f: 1, poziom: poziom},
+		beforeSend: function(){
+			//ODPALENIE LOADERA
+			przeslona();
+			if(katalog == 0){
+				$('#zdjecie').attr('src', 'image.png')
+			}
+		},
+		complete: function(){
+			//ZGASZENIE LOADERA
+			$('#przeslona').remove();
+		},
+		success: function(m){
+			//LISTOWANIE KATALOGOWY
+			objekt = JSON.parse(m);
+			//OPROZNIJ POLE
+			if(poziom == kategoria_glowna){
+				$("#pole_przyciski > div").empty();
+			}
+			//OPISY KATEGORII
+			for(i=0;i<objekt.length;i++){
+				if(poziom == kategoria_glowna){
+					if(objekt[i].NAME.split('')[0] != '_'){
+						$("#pole_przyciski > div").append("<div class='przycisk przycisk"+katalog+"' x='"+objekt[i].ID+"' y="+katalog+"><span>"+objekt[i].NAME+"</span><div></div></div>");	
+					}
+				}else{	
+					$(fragment).after("<div class='przycisk przycisk"+katalog+"' x='"+objekt[i].ID+"' y="+katalog+"><span>"+objekt[i].NAME+"</span><div></div></div>");
+				}				
+			}
+			//SPRAWDZENIE ILOSCI	
+			$('.przycisk').each(function(){
+				szukaniePustych($(this), $(this).attr('x'));
+				
+			})			
+			//ANIMACJE
+			animuj(2);
+			//OPIS KATEGORII
+			$(".przycisk"+katalog).click(function(){
+				if($(this).attr('i') != 0){			
+					//POBRANIE DANYCH KATEGORII
+					_id_kategorii = $(this).attr('x');
+					_nazwa_kategorii = $(this).children().first().html();
+					//LISTOWANIE PRODUKTÓW
+					clear(parseInt($(this).attr('y')) + 1);
+					katalog = parseInt($(this).attr('y')) + 1;
+					listuj_produkty(_id_kategorii);					
+					listuj(_id_kategorii, this);					
+				}
+			})		
+		}		
+	})
+}
+//WYCZYSC PRZYCISKI
+function clear(poziom){
+	if(poziom != -1){
+		for(i = poziom; i < 10; i++){	
+			//USUWANIE PRZYCISKOW
+			$(".przycisk"+i).each(function(){
+				$(this).remove();
+			})
+		}
+	}	
+}
+//WYSWIETL PRODUKTY
+function listuj_produkty(idd){
+	if(katalog == 2){
+		id_niezmienne = idd;
+	}else{
+		//CECHY OPCJONALNE
+		//STATKI
+		if(_nazwa_kategorii == 'Wojskowe'){		
+			id_niezmienne = 45;	
+		//STATKI
+		}else if(_nazwa_kategorii == 'Żaglowce'){		
+			id_niezmienne = 44;
+		//STATKI
+		}else if(_nazwa_kategorii == 'Cywilne'){		
+			id_niezmienne = 43;	
+		//ZESTAWY FARB
+		}else if(_nazwa_kategorii == 'Zestawy farb'){		
+			id_niezmienne = 999;	
+		//INNE		
+		}
+	}
+	//CZYSZCZENIE POLA PRODUKTOW
+	$("#poleProduktow > div").html('');
+	//WYSYLANIE ID
+	$.ajax({
+		type: "POST",
+		url: "pobranie.php",
+		data: { f: 2, id: idd},
+		beforeSend: function(){
+			//ODPALENIE LOADERA
+			przeslona();
+		},
+		complete: function(){
+			//ZGASZENIE LOADERA
+			$('#przeslona').remove();
+		},
+		success: function(data){
+			//SPRAWDZENIE ILOSCI	
+			$('.przycisk').each(function(){
+				szukaniePustych($(this), $(this).attr('x'));
+			})
+			//ZWROCONO PRODUKT
+			objekt = JSON.parse(data);
+			//BRAK PRODUKOTW
+			if(objekt.length == 0){
+				przeslona("Brak produktów w tej kategorii");
+				setTimeout(function(){
+					$('#przeslona').remove();
+					//LISTUJ KATEGORIE GLOWNA
+					id_niezmienne = '';
+					_nazwa_kategorii = '';
+					_id_produktu = '';
+					_id_produktu = '';
+					_nazwa_produktu = '';
+					katalog = 0;
+					listuj(kategoria_glowna, 1)
+				}, 1000);						
+			}else{
+				//ZNALEZIONO
+				text = '';
+				text += "<table style='margin-bottom:100px;'><tr>"
+				text += "<tr><td style='width:' class='toptd' colspan='1'><div class='przycisk_tytul' style='width:100%;font-weight:bold;text-align:center;padding-top:2px;padding-bottom:2px;font-size:20px;margin-bottom:20px;-webkit-touch-callout: text;-webkit-user-select: text;  -khtml-user-select: text;    -moz-user-select: text;    -ms-user-select: text;    user-select: text; /'><span>"+objekt[0].NAME+"</span> - "+objekt[0].REF+"<span  x='"+objekt[0].NAME+"' id='klik' style='font-size:15px;margin-left:15px;cursor:pointer;'>[google]</span></div></td></tr>"
+				text += "<tr class='a'><td class='maintd'><img src='' x='"+objekt[0].ID+"' id='zdjecie_"+objekt[0].ID+"' style='width:calc(100% - 10px);display: block;margin: 0 auto;border: 2px solid grey;margin-top:9px;margin-bottom:15px;cursor:pointer;' />"
+				text += "<form id='form0_"+objekt[0].ID+"'><fieldset class='field0'><legend class='legend0'></legend></fieldset></form></td>"
+				text += "</tr></table>"
+				if($("#poleProduktow > div").html() == '')
+					$("#poleProduktow > div").html(text);
+				$('#klik').click(function(){
+					var win = window.open("https://www.google.pl/search?q="+$(this).attr('x')+"&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8", '_blank');
+					win.focus();
+				})
+				//POBRANIE ID PRODUKTU
+				_id_produktu = objekt[0].ID
+				//ZDJECIE
+				$.ajax({
+					type: "POST",
+					url: "pobranie.php",
+					data: { f: 4, id: _id_produktu},
+					async: false
+				}).success(function(data){
+					//ZNALEZIONO ZDJECIE
+					$("#zdjecie_"+_id_produktu).attr('src', data);
+					//ZDJECIE KLIK
+					$("#zdjecie_"+_id_produktu).click(function(){						
+						window.open(data, '_blank');						
+					})						
+				})					
+				//ZAMYKANIE				
+				$("#zamknij").unbind().click(function(){
+					ostatni = _id_produktu;
+					listuj_produkty(idd);
+				})	
+				//SZUKAJ CECH
+				cechy();	
+			}
+		}
+	})
+}	
+//EKRAN PRACY / LOADING
+function przeslona(nazwa = "Ładowanie"){
+	$('body').append('<div id="przeslona">'+nazwa+'</div>');
+	$('#przeslona').css('height', $(window).innerHeight())
+	$('#przeslona').css('width', $(window).innerWidth())
+	$('#przeslona').css('line-height', '100%');
+}
+//WYSZUKIWANIE CECH
+function cechy(){	
+	$.ajax({
+		type: "POST",
+		url: "cechy.php",
+		data: { f: 1, id: _id_kategorii},
+		async: false
+	}).success(function(data) {	
+		objekt = JSON.parse(data);
+		//ID PRODUKTU
+		_id_produktu = $(".field0").parent().attr('id').split("_")[1]
+		//PETLA PO WYNIKACH
+		$("#poleProduktow > div").css('width', objekt.length*260);
+		for(i=0;i<objekt.length;i++){			
+			if(i!=0){
+				$(".a").each(function(){	
+					$(this).append("<td style=''; rowspan='1'><form id='form"+i+"_"+_id_produktu+"'><fieldset class='field"+i+"'><legend class='legend"+i+"' id='legend"+i+"_"+objekt[i].ID+"'></legend></fieldset></form></td>")
+				})
+			}
+			$.ajax({
+				type: "POST",
+				url: "pobranie.php",
+				data: { f: 5, id: _id_produktu},
+				async: false
+			}).done(function(datka) {	
+				//BRAK CECH
+				if(datka == 0){						
+					pozycja_pozostale = 0;
+					licz_pozostale = 0;		
+					//PETLA PO CECHACH objekt[i].FEATURES -----> tablica cech
+					for(j = 0; j < objekt[i].FEATURES.length; j++){					
+						//PETLA PO CECACH objekt[i].FEATURES[j] -----> konkretna cecha
+						if(objekt[i].FEATURES[j].value == 'Pozostałe'){								
+							//JEZELI POZOSTALE
+							pozycja_pozostale = j;
+							licz_pozostale++;							
+						}else{
+							//DODAJ CECHE
+							$(".field"+i).append('<div class="switch"><label><input class="checkbox" id="" id_feature_value="'+objekt[i].FEATURES[j].id_feature_value+'" type="checkbox" class="hidden" name="" id_feature_value="'+objekt[i].FEATURES[j].id_feature_value+'" id_feature="'+objekt[i].ID+'" id_product="'+_id_produktu+'" x="0"/>'+objekt[i].FEATURES[j].value+'</label></div>');														
+						}														
+					}		
+					//JEZELI ZNALEZIONO POZOSTALE
+					if(licz_pozostale > 0){							
+						$(".field"+i).append('<br><br><div class="switch"><label><input class="checkbox" id="" id_feature_value="'+objekt[i].FEATURES[pozycja_pozostale].id_feature_value+'" type="checkbox" class="hidden" name="" id_feature_value="'+objekt[i].FEATURES[pozycja_pozostale].id_feature_value+'" id_feature="'+objekt[i].ID+'" id_product="'+_id_produktu+'" x="0"/>'+objekt[i].FEATURES[pozycja_pozostale].value+'</label></div>')
+														
+					}
+					//PETLA PO NAZWACH CECH objekt[i].NAME -----> nazwa cechy
+					$(".legend"+i).each(function(){
+						$(this).append(objekt[i].NAME)
+					})					
+				
+				}else{				
+					//ZAZNACZ CECHE						
+					objekt2 = JSON.parse(datka);						
+					pozycja_pozostale = 0;
+					licz_pozostale = 0;				
+					//PETLA PO objekt[i].FEATURES -----> tablica cech
+					for(j = 0; j < objekt[i].FEATURES.length; j++){					
+						//PETLA PO objekt[i].FEATURES[j] -----konkretna cecha
+						if(objekt[i].FEATURES[j].value == 'Pozostałe'){	
+							//POZOSTALE
+							pozycja_pozostale = j;
+							licz_pozostale++;							
+						}else{
+							//CHECKBOX
+							$(".field"+i).append('<div class="switch"><label class="c'+i+'" y="'+j+'" ><input class="checkbox" id="" id_feature_value="'+objekt[i].FEATURES[j].id_feature_value+'" type="checkbox" class="hidden" name="" id_feature_value="'+objekt[i].FEATURES[j].id_feature_value+'" id_feature="'+objekt[i].ID+'" id_product="'+_id_produktu+'" x="0"/>'+objekt[i].FEATURES[j].value+'</label></div>');														
+						}														
+					}		
+					//DODANIE POZOTALE
+					if(licz_pozostale > 0){							
+						$(".field"+i).append('<br><br><div class="switch"><label class="c'+i+'" y="'+pozycja_pozostale+'" ><input class="checkbox" id="" id_feature_value="'+objekt[i].FEATURES[pozycja_pozostale].id_feature_value+'" type="checkbox" class="hidden" name="" id_feature_value="'+objekt[i].FEATURES[pozycja_pozostale].id_feature_value+'" id_feature="'+objekt[i].ID+'" id_product="'+_id_produktu+'" x="0"/>'+objekt[i].FEATURES[pozycja_pozostale].value+'</label></div>')
+														
+					}
+					//PETLA PO KLIKNIETYCH
+					for(j = 0; j < objekt2.length; j++){	
+						//DLA KAZDEGO LABELA
+						$('.c'+i).each(function(k,v){		
+							//SPRAWDZENIE CZY TO TEN KONKRETNY
+							if($(this).text() == objekt2[j].CECHA && objekt2[j].ID == objekt[i].FEATURES[$(this).attr('y')].id_feature_value){
+								//ZAZNACZENIE JEZELI TAK
+								$(this).find(">:first-child").attr('x', 1);
+								$(this).find(">:first-child").prop('checked', true);							
+							}							
+						})					
+					}
+					//PETLA PO NAZWACH CECH objekt[i].NAME -----> nazwa cechy
+					$(".legend"+i).each(function(){
+						$(this).append(objekt[i].NAME)
+					})							
+				}					
+			})			
+		}
+		//KLIKANIE W CHECKBOXA
+		$('.checkbox').each(function(){
+			$(this).on("click", function() {
+				if($(this).attr('x') == 0){
+					$(this).attr('x', 1)
+					//KLIK POSITIVE				
+					$.ajax({
+						type: "POST",
+						url: "cechy.php",
+						//value- wartosc cechy, idd- id produktu
+						data: { f: 2, id_feature_value: $(this).attr('id_feature_value'), id_feature: $(this).attr('id_feature'), id_product: $(this).attr('id_product')},
+						async: false,
+						beforeSend: function(){
+							//ODPALENIE LOADERA
+							przeslona("Dodawanie");
+						},
+						complete: function(){
+							//ZGASZENIE LOADERA
+							$('#przeslona').remove();
+						},
+						success: function(data){
+							console.log(data);
+						}
+					})
+				}else{
+					$(this).attr('x', 0)
+					//KLIK NEGATIVE
+					$.ajax({
+						type: "POST",
+						url: "cechy.php",
+						data: { f: 3, id_feature_value: $(this).attr('id_feature_value'), id_feature: $(this).attr('id_feature'), id_product: $(this).attr('id_product')},
+						async: false,
+						beforeSend: function(){
+							//ODPALENIE LOADERA
+							przeslona("Usuwanie");
+						},
+						complete: function(){
+							//ZGASZENIE LOADERA
+							$('#przeslona').remove();
+						},
+						success: function(data){
+							console.log(data);
+						}
+					})
+				}
+			});
+		})				
+	})
+	//MALO WAZNE WYMIAROWANIE
+	$('.a').find('td').css('width', 250)
+	$(".toptd").attr("colspan", i)
+}
+//SZUKANIE PUSTYCH
+function szukaniePustych(obj, iden){
+	$.ajax({
+		type: "POST",
+		url: "pobranie.php",
+		data: { f: 6, id: iden},
+		async: false,
+		beforeSend: function(){
+			//ODPALENIE LOADERA
+			//przeslona("Sprawdzanie ilości");
+		},
+		complete: function(){
+			//ZGASZENIE LOADERA
+			//$('#przeslona').remove();
+		},
+		success: function(data){		
+			if(data == 0){		
+				$(obj).remove();
+			}else{
+				$(obj).find('div:first').html(data);
+				$(obj).attr('i', data);	
+			}	
+		}
+	})
+}
+//USUWANI CECH
+function usun(){
+	//ZCZYTANIE ID REF
+	var id_ref = prompt("Podaj numer referencyjny:\n'ostatni'- usuwa cechy ostatniego produktu\n'nazwa'- usuwanie produktów po nazwie", "");	
+	if(id_ref != ''){
+		if(id_ref.toLowerCase() == 'ostatni'){
+			//USUWANIE OSTATNIEGO
+			$.ajax({
+				type: "POST",
+				url: "pobranie.php",
+				data: { f: 'wybrane', iden: ostatni, opcja:1}
+			})
+		}
+		if(id_ref.toLowerCase() == 'nazwa'){
+			//USUWANIE PO NAZWACH
+			var nazwa_usun = prompt("Podaj nazwę do usunięcia:\n'%' są dodawane automatycznie\nTekst mający mniej niż 3 znaki nie jest brany pod uwagę", "");	
+			//OPRACOWANIE NAZWY
+			var nazwy_usun_tab = nazwa_usun.split(' ');
+			var nazwa_usun = '%';
+			$(nazwy_usun_tab).each(function(k,v){
+				nazwa_usun += v;
+				nazwa_usun += '%';
+			})
+			//USUWANIE
+			$.ajax({
+				type: "POST",
+				url: "pobranie.php",
+				data: { f: 'wybrane', iden: nazwa_usun, opcja:3}
+			})
+		}
+		if(id_ref.toLowerCase() != 'ostatni' && id_ref.toLowerCase() != 'nazwa'){
+			//USUWANIE PO ID
+			$.ajax({
+				type: "POST",
+				url: "pobranie.php",
+				data: { f: 'wybrane', iden: id_ref, opcja:2}
+			})
+		}		
+	}			
+}
+</script>
+</head>
+<body>
+
+<div style="width:90%;height:100%;margin-left:5%;    overflow-x: hidden;position:relative;    overflow-y: hidden;">
+<div style='width:217px;height:calc(100% - 265px);float:left;margin-left: 20' id='pole_przyciski'>
+
+
+	<div style='width:100%;height:100%;position:relative;overflow-y:auto;'></div>
+	
+	
+
+</div>
+<div id='przedzialek;' style='width:10px;background-color: grey;height:100%;margin-right: 20;;float: left;'></div>
+<div style='' id="poleProduktow"><div></div>
+	
+	
+
+</div>
+
+<div id='zamknij'>Zapisz, następny produkt</div>
+
+</div>
+<div id='usun'>Usuń cechy</div>
+
+<div style='position: absolute;left: calc((5% + 217px - 200px) / 2 + 20px);width: 250;height: 50;bottom:110px;text-align:left;'>Sortuj wedlug:<br>
+	<div style='margin-top:10px;'>
+		<div id='sortuj_nowe' style='float: left;border: 2px solid gray;padding-top: 5; padding-bottom: 5; margin-right: 17;width:90;text-align:center;cursor:not-allowed;'>NOWE</div>
+		<div id='sortuj_standartowe' style='float: left;border: 2px solid green;padding-top: 5; padding-bottom: 5; ;width:90;text-align:center;cursor:not-allowed;'>STD.</div>
+	</div>
+</div>
+
+<div style='position: absolute;left: calc((5% + 217px - 200px) / 2 + 20px);width: 250;height: 50;bottom:200;text-align:left;'>Wyświetl:<br>
+	<div style='margin-top:10px;'>
+		<div id='wyswietl_wszystkie' style='float: left;border: 2px solid gray;padding-top: 5; padding-bottom: 5; margin-right: 17;width:90;text-align:center;cursor:not-allowed;'>Wszystkie</div>
+		<div id='wyswietl_dostepne' style='float: left;border: 2px solid green;padding-top: 5; padding-bottom: 5; ;width:90;text-align:center;cursor:not-allowed;'>Dostepne</div>
+	</div>
+</div>
+
+<div style='position: absolute;    bottom: 75;    left: -50;    height: 10px;    background-color: grey;    width: 200%;    margin-right: 20;    margin-left: 20;    float: left;' id='poprzeczny_div'></div>
+<div style='position: absolute;    bottom: 165;    left: -50;    height: 10px;    background-color: grey;    width: calc(5% + 217px + 50px);    margin-right: 20;    margin-left: 20;    float: left;' id='poprzeczny_div2'></div>
+<div style='position: absolute;    bottom: 255px;    left: -50;    height: 10px;    background-color: grey;    width: calc(5% + 217px + 50px);    margin-right: 20;    margin-left: 20;    float: left;' id='poprzeczny_div3'></div>
+</body>
+</html>
